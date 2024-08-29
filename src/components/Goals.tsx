@@ -4,68 +4,57 @@ import "../Goals.css";
 const Goals = () => {
   const [goal, setGoal] = useState("");
   const [summary, setSummary] = useState("");
-  const [DisplayGoal, setDisplayGoal] = useState("");
-  const [DisplaySummary, setDisplaySumamry] = useState("");
-  const [list, setList] = useState("");
   const [goalList, setGoalList] = useState([]);
   const [addGoalButton, setAddGoalButton] = useState(1);
+  const [editIndex, setEditIndex] = useState(null);
 
   function handleSubmit(e) {
-    setAddGoalButton(1);
     e.preventDefault();
-    console.log("The Goal Value", goal);
-    console.log("The Summary Value", summary);
+
     if (goal === "" || summary === "") {
       alert("Please fill in both fields.");
       return;
-    } else {
-      const newGoal = {
-        goal: goal,
-        summary: summary,
-      };
-
-      setGoalList([...goalList, newGoal]);
-      setGoal("");
-      setSummary("");
-      setDisplayGoal(`${goal}`);
-      setDisplaySumamry(`${summary}`);
     }
+
+    const newGoal = {
+      goal: goal,
+      summary: summary,
+    };
+
+    if (addGoalButton === 0 && editIndex !== null) {
+      const updatedList = [...goalList];
+      updatedList[editIndex] = newGoal;
+      setGoalList(updatedList);
+      setEditIndex(null);
+    } else {
+      setGoalList([...goalList, newGoal]);
+    }
+
+    setGoal("");
+    setSummary("");
+    setAddGoalButton(1);
   }
 
   function handleChangeGoal(e) {
     setGoal(e.target.value);
-    // console.log("The Goal value: ", goal);
   }
 
   function handleChangeSummary(e) {
     setSummary(e.target.value);
-    // console.log("The Summary value: ", summary);
   }
 
   function onDelete(index) {
-    console.log("Index passed to Delete Function: ", index);
     const updatedList = [...goalList];
     updatedList.splice(index, 1);
     setGoalList(updatedList);
   }
 
-  function editClicked(index) {
-    const updatedList = [...goalList];
-    updatedList.splice(index, 1);
-    setGoalList(updatedList);
-  }
   function onEdit(index) {
     setAddGoalButton(0);
-    console.log("The Edit function is pressed", index);
-
     const selectedItem = goalList[index];
-
-    const goal = selectedItem.goal;
-    const summary = selectedItem.summary;
-
-    setGoal(goal);
-    setSummary(summary);
-    editClicked(index);
+    setGoal(selectedItem.goal);
+    setSummary(selectedItem.summary);
+    setEditIndex(index);
   }
 
   return (
@@ -113,10 +102,7 @@ const Goals = () => {
       {goalList.map((item, index) => (
         <div key={index} className="displayBlocks">
           <div className="displayGoals">
-            <h3>
-              {item.goal}
-              {/* {index} */}
-            </h3>
+            <h3>{item.goal}</h3>
           </div>
 
           <div className="displaySummary">
