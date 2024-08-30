@@ -1,0 +1,75 @@
+
+
+.Form{
+    margin-top: 8%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1.0rem;
+    font-weight:900;
+    text-transform: uppercase;
+    color: #d4b424;
+    text-align: left;
+    
+}
+
+.input-group input {
+    font: inherit;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #b4b6c4;
+    border: none;
+    border-radius: 4px;
+    height: 70px;
+    border-radius: 7px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #f7e596;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: bold;
+    color: #3a4346;
+    cursor: pointer;
+    height: 70px;
+
+}
+
+.btn:hover {
+    background-color: #e0c738;
+}
+
+
+.btn4 {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #f7e596;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: bold;
+    color: #3a4346;
+    cursor: pointer;
+    height: 70px;
+
+}
+
+
+.btn4:hover {
+    background-color: #e0c738;
+}
