@@ -1,75 +1,47 @@
+.items {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  gap: 10px;
+}
 
 .displayBlocks {
-    margin-top: 20px;
-    height: auto; 
-    background-color: rgba(0, 0, 0, 0.3); 
-    border-radius: 8px;
-    padding: 16px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    width: 80%;
-    margin-left: 85px;
+  width: calc(49%); 
+  box-sizing: border-box; 
+  padding: 10px;
+  position: relative; 
+  background-color: #3b3d42;
+  border-radius: 8px;
   
-
-    
-  }
-  
-  .displayGoals {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2em;
-    font-weight: bold;
-    line-height: 24px;
-    text-align: left;
-    margin-bottom: 4px;
-    color: #a0aec0; 
-  }
-  
-  .displaySummary {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    line-height: 24px;
-    text-align: left;
-    color: #e2e8f0; 
-  }
-  
-  .btn1 {
-    background-color: rgba(0, 0, 0, 0.01);
-    color: rgb(105, 100, 100);
-    border: 2px solid #0c0d0d;
-    padding: 0.5rem 1rem; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
-    align-self: center; 
-    position: relative; 
-    top: -40px; 
-    right: -250px;
-  }
-  
-  
-  .btn1:hover {
-    background-color: rgba(0, 0, 0, 0.1); 
-  }
-  
+}
 
 
-  
-  .btn2 {
-    background-color: rgba(0, 0, 0, 0.01);
-    color: rgb(105, 100, 100);
-    border: 2px solid #0c0d0d;
-    padding: 0.5rem 1rem; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
-    align-self: center; 
-    position: relative; 
-    top:-15px; 
-    right: -250px;
-    position: relative;
-  }
-  
-  
-  .btn2:hover {
-    background-color: rgba(0, 0, 0, 0.1); 
-  }
-  
+.Buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.Buttons button {
+  background-color: #606369; 
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 5px;
+  border-radius: 15px;
+
+}
+
+
+.head1, .head2 {
+  width: 100%;
+  color: white;
+  text-align: center;
+}

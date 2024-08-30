@@ -8,6 +8,7 @@ const HeaderComponent = () => {
   const [goalList, setGoalList] = useState([]);
   const [addGoalButton, setAddGoalButton] = useState(1);
   const [editIndex, setEditIndex] = useState(null);
+  const [submit, setSubmit] = useState(1);
 
   function FormsCallback(goal, summary, editIndex, addGoalButton, goalList) {
     setGoal(goal);
@@ -30,6 +31,8 @@ const HeaderComponent = () => {
       alert("Please fill in both fields.");
       return;
     }
+
+    setSubmit(0);
 
     const newGoal = {
       goal: goal,
@@ -95,6 +98,14 @@ const HeaderComponent = () => {
           </button>
         )}
       </form>
+
+      {/* {submit === 1 && (
+        <div className="alert">
+          <div className="container">
+            <h4>No course Goals yet</h4>
+          </div>
+        </div>
+      )} */}
 
       <DisplayBlocks goalList={goalList} FormsCallback={FormsCallback} />
     </div>

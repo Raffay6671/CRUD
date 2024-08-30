@@ -73,3 +73,12 @@
 .btn4:hover {
     background-color: #e0c738;
 }
+
+
+
+
+.alert .container {
+    height: 100px; 
+    width: 100%;
+    border-color: green;
+}

@@ -15,21 +15,31 @@ const DisplayBlocks = ({ goalList, FormsCallback }) => {
   }
 
   return (
-    <div>
+    <div className="items">
       {goalList.map((item, index) => (
         <div key={index} className="displayBlocks">
-          <div className="displayGoals">
-            <h3>{item.goal}</h3>
+          <div className="head1">
+            <h3 style={{ color: "#f7e596", textAlign: "center" }}>
+              {item.goal}
+            </h3>
           </div>
-          <div className="displaySummary">
-            <h3>{item.summary}</h3>
+
+          <div className="head2">
+            <h3
+              style={{
+                color: "#d3d3d3",
+                textAlign: "center",
+                fontWeight: "300",
+              }}
+            >
+              {item.summary}
+            </h3>
           </div>
-          <button className="btn1" onClick={() => handleDelete(index)}>
-            Delete
-          </button>
-          <button className="btn2" onClick={() => handleEdit(index)}>
-            Edit
-          </button>
+
+          <div className="Buttons">
+            <button onClick={() => handleDelete(index)}>Delete</button>
+            <button onClick={() => handleEdit(index)}>Edit</button>
+          </div>
         </div>
       ))}
     </div>
